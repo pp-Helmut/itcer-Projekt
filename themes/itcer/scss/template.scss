@@ -1,0 +1,71 @@
+@charset 'utf-8';
+@import 'settings';
+@import 'mixins';
+@import 'foundation';
+@include foundation-global-styles;
+@include foundation-typography;
+@include foundation-forms;
+@include foundation-visibility-classes;
+@include foundation-float-classes;
+
+*,
+* ::after,
+* ::before {
+  box-sizing: border-box;
+}
+
+%clearfix {
+  @include clearfix();
+}
+//Layout
+
+.outer {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.section {
+  margin: 0 auto;
+  max-width: $global-width;
+}
+
+.page-wrap {
+  margin: 0 auto;
+  max-width: rem-calc(1280);
+  padding: $grid-column-gutter / 4;
+}
+//Variablen
+
+%btn-bg-image {
+  @include size(rem-calc(25));
+  background: url("../img/icons.svg#arrow-right") center/contain no-repeat;
+  content: '';
+  display: inline-block;
+}
+
+%btn-bg-circle {
+  @include size(rem-calc(50));
+  background: url("../img/icons.svg#circle-right") center/contain no-repeat;
+  content: '';
+  display: inline-block;
+}
+// Animation
+
+%btn-rotate {
+  transition: transform 0.15s ease-in-out;
+
+  &:focus,
+  &:hover {
+    transform: rotate(-45deg);
+  }
+}
+// Textblöcke + Bilder
+
+img {
+  height: auto;
+  width: 100%;
+}
+
+a {
+  text-decoration: underline;
+}

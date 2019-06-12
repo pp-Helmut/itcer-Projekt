@@ -1,0 +1,7 @@
+.DS_Store
+/uploads
+/upgrade
+/w3tc-config
+/cache
+/advanced-cache.php
+*.log

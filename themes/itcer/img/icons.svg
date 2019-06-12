@@ -1,0 +1,41 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+  <defs>
+    <style>
+      g {
+        display: none;
+      }
+      g:target,
+      g:target g {
+        display: inline;
+      }
+      .white {
+        color: #ffffff;
+      }
+      .black {
+        color: #000000;
+      }
+      .blue {
+        color: #29ABE2;
+      }
+    </style>
+
+    <symbol id="arrow" viewBox="-24.955 882.045 50 50">
+      <title>Arrow</title>
+      <path fill="#FFF" d="M-.6 882.934l-2.166 2.191a1.338 1.338 0 0 0 0 1.878l16.967 17.165h-37.344a1.32 1.32 0 0 0-1.313 1.328v3.098a1.32 1.32 0 0 0 1.313 1.328h37.344l-16.967 17.165a1.338 1.338 0 0 0 0 1.878l2.166 2.191a1.301 1.301 0 0 0 1.855 0l22.904-23.172a1.34 1.34 0 0 0 0-1.879L1.256 882.934a1.3 1.3 0 0 0-1.856 0z"/>
+    </symbol>
+    <symbol id="circle" viewBox="0 0 40 40">
+      <title>Circle</title>
+      <path fill="#000" d="M20 0C8.975 0 0 8.976 0 20c0 11.033 8.975 20 20 20 11.033 0 20-8.967 20-20C40 8.976 31.032 0 20 0zm0 38.848C9.611 38.848 1.161 30.389 1.161 20S9.611 1.162 20 1.162s18.848 8.451 18.848 18.839S30.389 38.848 20 38.848z"/><path d="M22.348 14.747l5.367 4.676H9.851v1.153h17.864l-5.367 4.678.757.873L30.148 20l-7.043-6.126z"/>
+    </symbol>
+  </defs>
+  <g id="arrow-right">
+    <use class="white" xlink:href="#arrow"/>
+  </g>
+  <g id="circle-right">
+    <use class="black" xlink:href="#circle"/>
+  </g>
+
+
+  <!-- <g id="language-passive"> <use class="black" xlink:href="#language"/> </g> -->
+</svg>

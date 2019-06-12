@@ -1,0 +1,87 @@
+//responsive Typografie
+@mixin fluidType($min-font, $max-font, $min-vw, $max-vw) {
+  font-size: calc(#{$min-font} + #{strip-unit($max-font - $min-font)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+}
+//Layout
+//Spalte ohne Abstand(padding)
+@mixin col($class-parent, $class-child, $col) {
+  .#{$class-parent} {
+    display: flex;
+    flex-wrap: wrap;
+
+    .#{$class-child} {
+      width: percentage(1 / $col);
+    }
+  }
+}
+//Spalte ohne Abstand(padding) im Breakpoint
+@mixin col-breakpoint($class-child, $col, $breakpoint) {
+  @include breakpoint($breakpoint) {
+    .#{$class-child} {
+      width: percentage(1 / $col);
+    }
+  }
+}
+//Spalte mit Abstand(padding)
+@mixin col-padding($class-parent, $class-child, $col, $padding) {
+  .#{$class-parent} {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: rem-calc(-$padding);
+    margin-right: rem-calc(-$padding);
+
+    .#{$class-child} {
+      width: percentage(1 / $col);
+      padding-left: rem-calc($padding);
+      padding-right: rem-calc($padding);
+    }
+  }
+}
+
+//Spalte mit Abstand im Breakpoint
+@mixin col-padding-breakpoint($class-parent, $class-child, $col, $breakpoint) {
+  .#{$class-parent} {
+    margin-left: rem-calc(-$padding);
+    margin-right: rem-calc(-$padding);
+
+    .#{$class-child} {
+      width: percentage(1 / $col);
+      padding-left: rem-calc($padding);
+      padding-right: rem-calc($padding);
+    }
+  }
+}
+//Flex Order
+@mixin flex-order($class-parent, $prefix, $order...) {
+  .#{$class-parent} {
+    display: flex;
+    @each $i in $order {
+      .#{$prefix}#{nth($i, 1)} {
+        order: nth($i, 2);
+      }
+    }
+  }
+}
+
+//@include flex-order('blog-link', 'blog-', 'image' 1, 'text' 2);
+//aspectratio
+@mixin aspectratio($w, $h) {
+  &:before {
+    content: '';
+    display: block;
+    float: left;
+    padding-top: calc($h / $w * 100%);
+  }
+
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+
+// Height Width gleiche Größe
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
